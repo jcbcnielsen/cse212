@@ -28,6 +28,14 @@
     /// </summary>
     /// <param name="numbers">array of integers</param>
     private static void DisplaySumPairs(int[] numbers) {
-        // TODO Problem 2 - This should print pairs of numbers in the given array
+        HashSet<int> pairHalves = new HashSet<int>();
+        foreach (int number in numbers)
+        {
+            if (pairHalves.Contains(10 - number))
+            {
+                Console.WriteLine($"{10 - number} {number}");
+            }
+            pairHalves.Add(number);
+        }
     }
 }
